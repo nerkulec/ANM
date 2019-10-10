@@ -9,7 +9,7 @@ function float_from_bitstring(bitstr)
     for i in 12:63
         m += parse(Int64, bitstr[i+1])*Float64(2.0)^(-i+11)
     end
-    return sign*m*2^c
+    return sign*m*Float64(2)^c
 end
 
 v = float_from_bitstring("0100000010100101001001100110011001011001010010101111010011110001")
